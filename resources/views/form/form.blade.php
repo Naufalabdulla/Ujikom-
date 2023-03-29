@@ -128,18 +128,18 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/change/password" class="link">
+                        <a href="/pengelolaansp" class="link">
                             <i class="ti-email"></i>
                             <span>Pengelolaan SP</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('form/view/detail') }}" class="main-menu has-dropdown">
+                        <a href="/pelanggaransantri" class="main-menu has-dropdown">
                             <i class="ti-agenda"></i>
                             <span>Pelanggaran Santri</span>
                         </a>
-                        <ul class="sub-menu " style="max-height: 0px;">
-                            <li><a href="{{ route('form/view/detail') }}" class="link">
+                        <ul class="sub-menu" style="max-height: 0px;">
+                            <li><a href="/pelanggaransantri" class="link">
                                     <span>Catatan Pelanggaran Santri</span></a>
                             </li>
                         </ul>
@@ -149,8 +149,8 @@
                             <i class="ti-archive"></i>
                             <span>Adab dan Ibadah <br> Santri</span>
                         </a>
-                        <ul class="sub-menu " style="max-height: 0px;">
-                            <li><a href="{{ route('userManagement') }}" class="link">
+                        <ul class="sub-menu" style="max-height: 0px;">
+                            <li><a href="/pencatatanadabdanibadah" class="link">
                                     <span>Pencatatan</span></a>
                             </li>
                             <li><a href="{{ route('activity/log') }}" class="link">
@@ -179,28 +179,31 @@
                     </li>
                     @endif
 
-                    <li>
+                    <li class="active">
                         <a href="#" class="main-menu has-dropdown">
                             <i class="ti-agenda"></i>
-                            <span>Form Input</span>
+                            <span>Form Element</span>
                         </a>
                         <ul class="sub-menu active" style="max-height: 0px;">
                             <li class="active"><a href="{{ route('form/staff/new') }}" class="link">
                                 <span>Input Staff</span></a>
                             </li>
-                            <li>
-                               <a href="/pengelolaansp/create" class="link">
-                                 <span>Input SP</span>
-                               </a>
+                            <li><a href="/pengelolaansp/create" class="link">
+                                <span>Input SP</span></a>
                             </li>
                             <li>
-                                <a href="/pelanggaransp/create" class="link">
+                                <a href="/pelanggaransantri/create" class="link">
                                     <span>Input Pelanggaran Santri</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pencatatanadabdanibadah/create" class="link">
+                                    <span>Input Pencatatan Adab dan Ibadah Santri</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
-
+                    
                     <br><br><br><br><br><br><br><br><br><br><br>
                     <li>
                         <a href="/logout" class="link">
@@ -210,7 +213,7 @@
                     </li>
                 </ul>
             </div>
-        </nav>      
+        </nav>         
 
         <!-- SIDEBAR -->
 
@@ -228,7 +231,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Input Information</h4>
+                            <h4 class="card-title">Input Staff</h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">

@@ -112,6 +112,9 @@ Route::delete('/pelanggaransantri/{id}', [App\Http\Controllers\CatatanPelanggara
 Route::get('/pencatatanadabdanibadah', [App\Http\Controllers\CatatanAdabDanIbadahSantriController::class, 'index'])->middleware('auth');
 Route::get('/pencatatanadabdanibadah/create', [App\Http\Controllers\CatatanAdabDanIbadahSantriController::class, 'create'])->middleware('auth');
 Route::post('/pencatatanadabdanibadah/store', [App\Http\Controllers\CatatanAdabDanIbadahSantriController::class, 'store'])->middleware('auth');
+Route::get('/pencatatanadabdanibadah/{id}/edit', [App\Http\Controllers\CatatanAdabDanIbadahSantriController::class, 'edit'])->middleware('auth');
+Route::put('/pencatatanadabdanibadah/{id}', [App\Http\Controllers\CatatanAdabDanIbadahSantriController::class, 'update'])->middleware('auth');
+Route::delete('/pencatatanadabdanibadah/{id}', [App\Http\Controllers\CatatanAdabDanIbadahSantriController::class, 'destroy'])->middleware('auth');
 
 
 
