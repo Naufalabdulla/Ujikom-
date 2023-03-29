@@ -235,7 +235,7 @@
                         </div>
                         <div class="card-content">
                             <div class="card-body">
-                                <form class="form form-horizontal" action="/pencatatanadabdanibadah/store" method="POST">
+                                <form class="form form-horizontal" action="/raporadabdanibadah/store" method="POST">
                                     @csrf
                                     <div class="form-body">
                                         <div class="row">
@@ -256,13 +256,13 @@
                                             </div>
 
                                             <div class="col-md-4">
-                                                <label>Tanggal Pencatatan</label>
+                                                <label>Tahun Ajaran</label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
                                                     <div class="position-relative">
-                                                        <input type="date" class="form-control @error('tanggalpencatatan') is-invalid @enderror"
-                                                        id="first-name-icon" name="tanggalpencatatan">
+                                                        <input type="date" class="form-control @error('tahunajaran') is-invalid @enderror"
+                                                        id="first-name-icon" name="tahunajaran">
                                                         <div class="form-control-icon">
                                                             <i class="bi bi-calendar-event"></i>
                                                         </div>
@@ -271,13 +271,13 @@
                                             </div>
 
                                             <div class="col-md-4">
-                                                <label>Sholat Lima Waktu</label>
+                                                <label>Presentasi Kehadiran</label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
                                                     <div class="position-relative">
-                                                        <select class="form-select mb-3 @error('sholatlimawaktu') is-invalid @enderror" aria-label="Default select example" 
-                                                        id="first-name-icon" name="sholatlimawaktu">
+                                                        <select class="form-select mb-3 @error('presentasikehadiran') is-invalid @enderror" aria-label="Default select example" 
+                                                        id="first-name-icon" name="presentasikehadiran">
                                                             <option selected="">Iya atau Tidak</option>
                                                             <option value="Iya">Iya</option>
                                                             <option value="Tidak">Tidak</option>
@@ -292,8 +292,8 @@
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
                                                     <div class="position-relative">
-                                                        <select class="form-select mb-3 @error('sholatlimawaktu') is-invalid @enderror" aria-label="Default select example" 
-                                                        id="first-name-icon" name="kualitas">
+                                                        <select class="form-select mb-3 @error('rataratakualitas') is-invalid @enderror" aria-label="Default select example" 
+                                                        id="first-name-icon" name="rataratakualitas">
                                                             <option selected="">Hadir, Tidak Hadir, Terlambat</option>
                                                             <option value="Hadir">Hadir</option>
                                                             <option value="Tidak Hadir">Tidak Hadir</option>

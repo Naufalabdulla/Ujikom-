@@ -16,10 +16,10 @@ class CreateRaporAdabsTable extends Migration
         Schema::create('rapor_adabs', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->integer('tahunajaran');
+            $table->date('tahunajaran');
             $table->string('presentasikehadiran');
             $table->string('rataratakualitas');
-            $table->string('catatan');
+            $table->string('catatan')->nullable();
             $table->timestamps();
         });
     }

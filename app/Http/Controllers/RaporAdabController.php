@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\RaporAdab;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
+use PDF;
 
 class RaporAdabController extends Controller
 {
@@ -37,7 +39,9 @@ class RaporAdabController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        RaporAdab::create($request->except(['_token','submit']));
+        Toastr::success('Data berhasil di simpan','Berhasil');
+        return redirect("/raporadabdanibadah");
     }
 
     /**
@@ -82,6 +86,9 @@ class RaporAdabController extends Controller
      */
     public function destroy(RaporAdab $raporAdab)
     {
-        //
+        $rapor = RaporAdab::find($id);
+        $rapor->delete();
+        Toastr::success('Data berhasil di hapus','Berhasil');
+        return redirect('/raporadabdanibadah');
     }
 }
