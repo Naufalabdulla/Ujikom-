@@ -158,7 +158,7 @@
                             <li class="active"><a href="/pencatatanadabdanibadah/index" class="link">
                                     <span>Pencatatan</span></a>
                             </li>
-                            <li><a href="/raporadabdanibadah/index" class="link">
+                            <li><a href="/raporadabdanibadah" class="link">
                                 <span>Rapor</span></a>
                             </li>
                         </ul>

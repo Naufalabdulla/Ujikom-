@@ -10,6 +10,7 @@ use App\Http\Controller\CatatanPelanggaranSantriController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\LockScreen;
+use App\Http\Controllers\RaporAdabController;
 
 
 /*
@@ -115,6 +116,12 @@ Route::post('/pencatatanadabdanibadah/store', [App\Http\Controllers\CatatanAdabD
 Route::get('/pencatatanadabdanibadah/{id}/edit', [App\Http\Controllers\CatatanAdabDanIbadahSantriController::class, 'edit'])->middleware('auth');
 Route::put('/pencatatanadabdanibadah/{id}', [App\Http\Controllers\CatatanAdabDanIbadahSantriController::class, 'update'])->middleware('auth');
 Route::delete('/pencatatanadabdanibadah/{id}', [App\Http\Controllers\CatatanAdabDanIbadahSantriController::class, 'destroy'])->middleware('auth');
+
+// ----------------------------  Rapor Adab dan Ibadah  ----------------------------------------------//
+
+Route::get('/raporadabdanibadah', [App\Http\Controllers\RaporAdabController::class, 'index'])->middleware('auth');
+Route::get('/raporadabdanibadah/create', [App\Http\Controllers\RaporAdabController::class, 'create'])->middleware('auth');
+
 
 
 

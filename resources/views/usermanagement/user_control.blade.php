@@ -159,7 +159,7 @@
                             <li><a href="/pencatatanadabdanibadah" class="link">
                                     <span>Pencatatan</span></a>
                             </li>
-                            <li><a href="{{ route('activity/log') }}" class="link">
+                            <li><a href="/raporadabdanibadah" class="link">
                                 <span>Rapor</span></a>
                         </li>
                         </ul>

@@ -191,6 +191,9 @@
                             <span>Form Element</span>
                         </a>
                         <ul class="sub-menu" style="max-height: 0px;">
+                            <li><a href="{{ route('form/staff/new') }}" class="link">
+                                <span>Input Staff</span></a>
+                            </li>
                             <li><a href="/pengelolaansp/create" class="link">
                                 <span>Input SP</span></a>
                             </li>

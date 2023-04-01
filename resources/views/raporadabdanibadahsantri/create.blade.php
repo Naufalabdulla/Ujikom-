@@ -74,11 +74,6 @@
                                         <i class="ti-user"></i> Profile
                                     </div>
                                 </a>
-                                <a href="/user/add/new">
-                                    <div class="description">
-                                        <i class="ti-pencil-alt"></i> Tambah User
-                                    </div>
-                                </a>
                                 <a href="/logout">
                                     <div class="description">
                                         <i class="ti-power-off"></i> Logout
@@ -138,13 +133,13 @@
                             <span>Pengelolaan SP</span>
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="/pelanggaransantri" class="main-menu has-dropdown">
                             <i class="ti-agenda"></i>
                             <span>Pelanggaran Santri</span>
                         </a>
                         <ul class="sub-menu active" style="max-height: 0px;">
-                            <li class="active"><a href="/pelanggaransantri" class="link">
+                            <li><a href="/pelanggaransantri" class="link">
                                     <span>Catatan Pelanggaran Santri</span></a>
                             </li>
                         </ul>
@@ -184,23 +179,24 @@
                     </li>
                     @endif
 
-                    <li>
+                    <li class="active">
                         <a href="#" class="main-menu has-dropdown">
                             <i class="ti-agenda"></i>
-                            <span>Form Input</span>
+                            <span>Form Element</span>
                         </a>
                         <ul class="sub-menu active" style="max-height: 0px;">
-                            <li>
-                               <a href="/pengelolaansp/create" class="link">
-                                 <span>Input SP</span>
-                               </a>
+                            <li><a href="{{ route('form/staff/new') }}" class="link">
+                                <span>Input Staff</span></a>
+                            </li>
+                            <li><a href="/pengelolaansp/create" class="link">
+                                <span>Input SP</span></a>
                             </li>
                             <li>
                                 <a href="/pelanggaransantri/create" class="link">
                                     <span>Input Pelanggaran Santri</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="/pencatatanadabdanibadah/create" class="link">
                                     <span>Input Pencatatan Adab dan Ibadah Santri</span>
                                 </a>
@@ -217,7 +213,7 @@
                     </li>
                 </ul>
             </div>
-        </nav>      
+        </nav>       
 
         <!-- SIDEBAR -->
 
@@ -232,56 +228,106 @@
             {!! Toastr::message() !!}
 
             <div class="content-wrapper">
-                <div class="row same-height">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Catatan Pelanggaran Santri</h4>
-                            </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Input Rapor Adab Santri</h4>
+                        </div>
+                        <div class="card-content">
                             <div class="card-body">
-                                <p class="form-text mb-2">Catatan Pelanggaran Santri SMK IDN Boarding School</p>
-                                <br>
-                                <br>
-                                <table id="example2" class="table display">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Nama Santri</th>
-                                            <th>Jenis Pelanggaran</th>
-                                            <th style="text-align: center;">Modify</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($pelanggaransantri as $key => $cp)
-                                        <tr>
-                                            <td>{{ ++$key }}</td>
-                                            <td>{{ $cp->nama }}</td>
-                                            <td>{{ $cp->pelanggaran }}</td>
-                                            <td class="text-center">
-                                                <a href="/pelanggaransantri/{{ $cp->id }}/edit">
-                                                    <button class="btn btn-sm mb-2 btn-success"><i class="bi bi-pencil-square"></i></button>
-                                                </a> 
-                                                <form action="/pelanggaransantri/{{ $cp->id }}" method="POST">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button type="submit" class="btn btn-sm mb-2 btn-danger"><i class="ti-trash"></i></button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Nama Santri</th>
-                                            <th>Jenis Pelanggaran</th>
-                                            <th style="text-align: center;">Modify</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                                <form class="form form-horizontal" action="/pencatatanadabdanibadah/store" method="POST">
+                                    @csrf
+                                    <div class="form-body">
+                                        <div class="row">
+
+                                            <div class="col-md-4">
+                                                <label>Nama Santri</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                                    <div class="position-relative">
+                                                        <input type="text" class="form-control @error('nama') is-invalid @enderror"
+                                                            placeholder="Nama Santri" id="first-name-icon" name="nama">
+                                                        <div class="form-control-icon">
+                                                            <i class="bi bi-person-check-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label>Tanggal Pencatatan</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                                    <div class="position-relative">
+                                                        <input type="date" class="form-control @error('tanggalpencatatan') is-invalid @enderror"
+                                                        id="first-name-icon" name="tanggalpencatatan">
+                                                        <div class="form-control-icon">
+                                                            <i class="bi bi-calendar-event"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label>Sholat Lima Waktu</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                                    <div class="position-relative">
+                                                        <select class="form-select mb-3 @error('sholatlimawaktu') is-invalid @enderror" aria-label="Default select example" 
+                                                        id="first-name-icon" name="sholatlimawaktu">
+                                                            <option selected="">Iya atau Tidak</option>
+                                                            <option value="Iya">Iya</option>
+                                                            <option value="Tidak">Tidak</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label>Kualitas</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                                    <div class="position-relative">
+                                                        <select class="form-select mb-3 @error('sholatlimawaktu') is-invalid @enderror" aria-label="Default select example" 
+                                                        id="first-name-icon" name="kualitas">
+                                                            <option selected="">Hadir, Tidak Hadir, Terlambat</option>
+                                                            <option value="Hadir">Hadir</option>
+                                                            <option value="Tidak Hadir">Tidak Hadir</option>
+                                                            <option value="Terlambat">Terlambat</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label>Catatan</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                                    <div class="position-relative">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Catatan Khusus" id="first-name-icon" name="catatan">
+                                                        <div class="form-control-icon">
+                                                            <i class="bi bi-archive"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>    
+            
+                                            <div class="col-12 d-flex justify-content-end" style="margin-top: 10px;">
+                                                <button type="submit" name="submit" class="btn btn-primary me-1 mb-1">Simpan</button>
+                                                <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         
