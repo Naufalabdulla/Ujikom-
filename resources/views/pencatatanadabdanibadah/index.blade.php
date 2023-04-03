@@ -74,6 +74,11 @@
                                         <i class="ti-user"></i> Profile
                                     </div>
                                 </a>
+                                <a href="/user/add/new">
+                                    <div class="description">
+                                        <i class="ti-pencil-alt"></i> Tambah User
+                                    </div>
+                                </a>
                                 <a href="/logout">
                                     <div class="description">
                                         <i class="ti-power-off"></i> Logout
@@ -185,9 +190,6 @@
                             <span>Form Input</span>
                         </a>
                         <ul class="sub-menu active" style="max-height: 0px;">
-                            <li><a href="{{ route('form/staff/new') }}" class="link">
-                                <span>Input Staff</span></a>
-                            </li>
                             <li>
                                <a href="/pengelolaansp/create" class="link">
                                  <span>Input SP</span>
@@ -236,6 +238,33 @@
                             <div class="card-header">
                                 <h4>Pencatatan Adab dan Ibadah</h4>
                             </div>
+
+                            <?php 
+
+                            function tgl_indo($tanggal){
+                            $bulan = array (
+                                1 =>   'Januari',
+                                'Februari',
+                                'Maret',
+                                'April',
+                                'Mei',
+                                'Juni',
+                                'Juli',
+                                'Agustus',
+                                'September',
+                                'Oktober',
+                                'November',
+                                'Desember'
+                            );
+                            $pecahkan = explode('-', $tanggal);
+                            
+                            // variabel pecahkan 0 = tanggal
+                            // variabel pecahkan 1 = bulan
+                            // variabel pecahkan 2 = tahun
+                        
+                            return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];}
+
+                             ?>
                             <div class="card-body">
                                 <p class="form-text mb-2">Pencatatan Adab dan Ibadah Santri SMK IDN Boarding School</p>
                                 <br>
@@ -257,10 +286,20 @@
                                         <tr>
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $ca->nama }}</td>
-                                            <td>{{ $ca->tanggalpencatatan }}</td>
+                                            <td><?=tgl_indo($ca->tanggalpencatatan); ?></td>
                                             <td>{{ $ca->sholatlimawaktu }}</td>
                                             <td>{{ $ca->kualitas }}</td>\
                                             <td>{{ $ca->catatan }}</td>
+                                            <td class="text-center">
+                                                <a href="/pencatatanadabdanibadah/{{ $ca->id }}/edit">
+                                                    <button class="btn btn-sm mb-2 btn-success"><i class="bi bi-pencil-square"></i></button>
+                                                </a> 
+                                                <form action="/pencatatanadabdanibadah/{{ $ca->id }}" method="POST">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit" class="btn btn-sm mb-2 btn-danger"><i class="ti-trash"></i></button>
+                                                </form>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

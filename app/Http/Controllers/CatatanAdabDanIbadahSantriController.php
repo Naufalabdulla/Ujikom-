@@ -45,10 +45,16 @@ class CatatanAdabDanIbadahSantriController extends Controller
 
     public function edit($id)
     {
+        $pencatatanadabdanibadah = CA::find($id);
+        return view('pencatatanadabdanibadah.edit',compact(['pencatatanadabdanibadah']));
     }
 
     public function update(Request $request, $id)
     {
+        $pencatatanadabdanibadah = CA::find($id);
+        $pencatatanadabdanibadah->update($request->except(['_token','submit']));
+        Toastr::success('Data berhasil diubah','Berhasil');
+        return redirect('/pencatatanadabdanibadah');
     }
 
     public function destroy($id)

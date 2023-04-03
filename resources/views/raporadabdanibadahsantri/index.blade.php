@@ -74,6 +74,14 @@
                                         <i class="ti-user"></i> Profile
                                     </div>
                                 </a>
+<<<<<<< HEAD
+=======
+                                <a href="/user/add/new">
+                                    <div class="description">
+                                        <i class="ti-pencil-alt"></i> Tambah User
+                                    </div>
+                                </a>
+>>>>>>> 2afe71c5104f2d71ae1c3a33d865a5347e352b8b
                                 <a href="/logout">
                                     <div class="description">
                                         <i class="ti-power-off"></i> Logout
@@ -245,11 +253,18 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Nama Santri</th>
+<<<<<<< HEAD
                                             <th>Tanggal Pencatatan</th>
                                             <th>Sholat Lima Waktu</th>
                                             <th>Kualitas</th>
                                             <th>Catatan</th>
                                             <th style="text-align: center;">Modify</th>
+=======
+                                            <th>Tahun Ajaran</th>
+                                            <th>Persentase Sholat Lima Waktu</th>
+                                            <th>Rata-Rata Kualitas</th>
+                                            <th>Catatan</th>
+>>>>>>> 2afe71c5104f2d71ae1c3a33d865a5347e352b8b
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -269,10 +284,16 @@
                                             <th>ID</th>
                                             <th>Nama Santri</th>
                                             <th>Tahun Ajaran</th>
+<<<<<<< HEAD
                                             <th>Presentasi Kehadiran Santri</th>
                                             <th>Rata-Rata Kualitas</th>
                                             <th>Catatan</th>
                                             <th style="text-align: center;">Modify</th>
+=======
+                                            <th>Persentase Sholat Lima Waktu</th>
+                                            <th>Rata-Rata Kualitas</th>
+                                            <th>Catatan</th>
+>>>>>>> 2afe71c5104f2d71ae1c3a33d865a5347e352b8b
                                         </tr>
                                     </tfoot>
                                 </table>

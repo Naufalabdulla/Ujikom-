@@ -73,6 +73,11 @@
                                         <i class="ti-user"></i> Profile
                                     </div>
                                 </a>
+                                <a href="/user/add/new">
+                                    <div class="description">
+                                        <i class="ti-pencil-alt"></i> Tambah User
+                                    </div>
+                                </a>
                                 <a href="/logout">
                                     <div class="description">
                                         <i class="ti-power-off"></i> Logout
@@ -253,8 +258,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-light font-semibold">Aktifitas Login User</h6>
-                                    <h6 class="text-light font-extrabold mb-0">{{ $user_activity_logs }}</h6>
+                                    <h6 class="text-light font-semibold">Pencatatan Adab dan Ibadah Santri</h6>
+                                    <h6 class="text-light font-extrabold mb-0">{{ $pencatatanadabdanibadah }}</h6>
                                 </div>
                             </div>
                         </div>

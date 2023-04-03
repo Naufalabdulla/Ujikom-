@@ -74,6 +74,11 @@
                                         <i class="ti-user"></i> Profile
                                     </div>
                                 </a>
+                                <a href="/user/add/new">
+                                    <div class="description">
+                                        <i class="ti-pencil-alt"></i> Tambah User
+                                    </div>
+                                </a>
                                 <a href="/logout">
                                     <div class="description">
                                         <i class="ti-power-off"></i> Logout
@@ -153,7 +158,7 @@
                             <li><a href="/pencatatanadabdanibadah" class="link">
                                     <span>Pencatatan</span></a>
                             </li>
-                            <li><a href="{{ route('activity/log') }}" class="link">
+                            <li><a href="/raporadabdanibadah" class="link">
                                 <span>Rapor</span></a>
                         </li>
                         </ul>
@@ -185,9 +190,6 @@
                             <span>Form Input</span>
                         </a>
                         <ul class="sub-menu active" style="max-height: 0px;">
-                            <li><a href="{{ route('form/staff/new') }}" class="link">
-                                <span>Input Staff</span></a>
-                            </li>
                             <li>
                                <a href="/pengelolaansp/create" class="link">
                                  <span>Input SP</span>

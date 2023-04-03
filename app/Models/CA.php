@@ -9,6 +9,4 @@ class CA extends Model
 {
     use HasFactory;
     protected $table = 'pencatatanadabdanibadah';
-    protected $primaryKey = 'id';
-    protected $fillable = ['nama', 'tanggalpencatatan', 'sholatlimawaktu', 'kualitas', 'catatan'];
 }
